@@ -5,6 +5,8 @@
 import Swift
 import SwiftUI
 
+#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst)
+
 struct _UIHostingScrollViewRootView<Content: View>: View {
     weak var base: UIHostingScrollView<Content>?
     
@@ -193,3 +195,5 @@ open class UIHostingScrollView<Content: View>: UIScrollView, UIScrollViewDelegat
         targetContentOffset.pointee = contentOffset(forPageIndex: targetIndex)
     }
 }
+
+#endif
