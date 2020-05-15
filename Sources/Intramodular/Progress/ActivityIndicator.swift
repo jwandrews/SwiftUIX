@@ -14,6 +14,7 @@ public struct ActivityIndicator {
     
     private var isAnimated: Bool = true
     private var style: Style?
+    private var controlSize: ControlSize?
     
     @Environment(\.tintColor) private var tintColor
     
@@ -65,17 +66,38 @@ extension ActivityIndicator: NSViewRepresentable {
     public typealias Context = NSViewRepresentableContext<Self>
     public typealias NSViewType = NSProgressIndicator
     
+    public init(_ controlSize: ControlSize = .regular) {
+        self.controlSize = controlSize
+    }
+    
     public func makeNSView(context: Context) -> NSViewType {
         let nsView = NSProgressIndicator()
-        
         nsView.isIndeterminate = true
         nsView.style = .spinning
+        
+        if let controlSize = controlSize {
+            nsView.controlSize = nsControlSize(controlSize)
+        }
         
         return nsView
     }
     
     public func updateNSView(_ nsView: NSViewType, context: Context) {
         isAnimated ? nsView.startAnimation(self) : nsView.stopAnimation(self)
+        nsView.controlSize = nsControlSize(context.environment.controlSize)
+    }
+    
+    private func nsControlSize(_ controlSize: ControlSize) -> NSControl.ControlSize {
+        switch controlSize {
+        case .mini:
+            return .mini
+        case .small:
+            return .small
+        case .regular:
+            return .regular
+        @unknown default:
+            return .regular
+        }
     }
 }
 
