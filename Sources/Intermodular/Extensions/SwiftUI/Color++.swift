@@ -68,6 +68,152 @@ extension Color {
 
 #endif
 
+#if os(macOS)
+
+extension Color {
+    public static var label: Color {
+        return .init(.labelColor)
+    }
+
+    public static var secondaryLabel: Color {
+        return .init(.secondaryLabelColor)
+    }
+
+    public static var tertiaryLabel: Color {
+        return .init(.tertiaryLabelColor)
+    }
+
+    public static var quaternaryLabel: Color {
+        return .init(.quaternaryLabelColor)
+    }
+
+    public static var link: Color {
+        return .init(.linkColor)
+    }
+
+    public static var windowFrameText: Color {
+        return .init(.windowFrameTextColor)
+    }
+
+    public static var selectedMenuItemText: Color {
+        return .init(.selectedMenuItemTextColor)
+    }
+
+    public static var alternateSelectedControlText: Color {
+        return .init(.alternateSelectedControlTextColor)
+    }
+
+    public static var headerText: Color {
+        return .init(.headerTextColor)
+    }
+
+    public static var separator: Color {
+        return .init(.separatorColor)
+    }
+
+    public static var grid: Color {
+        return .init(.gridColor)
+    }
+
+    public static var windowBackground: Color {
+        return .init(.windowBackgroundColor)
+    }
+
+    public static var underPageBackground: Color {
+        return .init(.underPageBackgroundColor)
+    }
+
+    public static var controlBackground: Color {
+        return .init(.controlBackgroundColor)
+    }
+
+    public static var selectedContentBackground: Color {
+        return .init(.selectedContentBackgroundColor)
+    }
+
+    public static var unemphasizedSelectedContentBackground: Color {
+        return .init(.unemphasizedSelectedContentBackgroundColor)
+    }
+
+    public static var alternateSelectedControlColor: Color {
+        return .init(.alternateSelectedControlColor)
+    }
+    
+    public static var alternateSelectedControlTextColor: Color {
+        return .init(.alternateSelectedControlTextColor)
+    }
+
+    public static var findHighlight: Color {
+        return .init(.findHighlightColor)
+    }
+
+    public static var text: Color {
+        return .init(.textColor)
+    }
+
+    public static var textBackground: Color {
+        return .init(.textBackgroundColor)
+    }
+
+    public static var selectedText: Color {
+        return .init(.selectedTextColor)
+    }
+
+    public static var selectedTextBackground: Color {
+        return .init(.selectedTextBackgroundColor)
+    }
+
+    public static var unemphasizedSelectedTextBackground: Color {
+        return .init(.unemphasizedSelectedTextBackgroundColor)
+    }
+
+    public static var unemphasizedSelectedText: Color {
+        return .init(.unemphasizedSelectedTextColor)
+    }
+
+    public static var control: Color {
+        return .init(.controlColor)
+    }
+
+    public static var controlText: Color {
+        return .init(.controlTextColor)
+    }
+
+    public static var selectedControl: Color {
+        return .init(.selectedControlColor)
+    }
+
+    public static var selectedControlText: Color {
+        return .init(.selectedControlTextColor)
+    }
+
+    public static var disabledControlText: Color {
+        return .init(.disabledControlTextColor)
+    }
+
+    public static var keyboardFocusIndicator: Color {
+        return .init(.keyboardFocusIndicatorColor)
+    }
+
+    public static var scrubberTexturedBackground: Color {
+        return .init(.scrubberTexturedBackground)
+    }
+
+    public static var controlAccent: Color {
+        return .init(.controlAccentColor)
+    }
+
+    public static var highlight: Color {
+        return .init(.highlightColor)
+    }
+
+    public static var shadow: Color {
+        return .init(.shadowColor)
+    }
+}
+
+#endif
+
 #if os(iOS) || targetEnvironment(macCatalyst)
 
 extension Color {
